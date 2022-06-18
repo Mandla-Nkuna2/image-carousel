@@ -1,0 +1,48 @@
+<mat-sidenav-container class="my-container">
+  <mat-sidenav
+    *ngIf="topicsBool"
+    #sidenav
+    mode="side"
+    opened
+    class="my-sidenav"
+    [fixedInViewport]="false"
+    [fixedTopGap]="0"
+    [fixedBottomGap]="0"
+  >
+    <div>
+      <ng-container *ngFor="let topic of topics">
+        <p class="topic-buttons">
+          <button class="topic-buttons" (click)="getImages(topic)">
+            {{ topic.title }}
+          </button>
+        </p>
+      </ng-container>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content style="text-align: center">
+    <h3>{{ topic }}</h3>
+    <div id="wrap" *ngIf="loaderBool">
+      <div id="outlet"></div>
+      <div id="loading">
+        <h2>Loading...</h2>
+      </div>
+    </div>
+
+    <div class="demo">
+      <carousel
+        [images]="images"
+        [height]="400"
+        [cellWidth]="400"
+        [cellsToShow]="3"
+        [overflowCellsLimit]="2"
+        [arrows]="!topicsBool"
+        (click)="onMove()"
+      >
+      </carousel>
+    </div>
+    <div>
+      <button id="onMenu" (click)="onMenu()" *ngIf="!topicsBool">Menu</button>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
