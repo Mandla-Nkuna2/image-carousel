@@ -8,14 +8,12 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./my-gallery.component.scss'],
 })
 export class MyGalleryComponent implements OnInit {
-  data: any[] = [];
   images: any[] = [];
   topics: any;
   topicsBool = true;
   loaderBool = false;
   topic = '';
   imageTotal = 3;
-  pageIndex = 0;
   url = 'https://api.unsplash.com/topics/';
   apiId = 'oTsf5M6-RS2bjI6bMnzy-fasHMqpWq1PON1oy2Tj-5g';
 

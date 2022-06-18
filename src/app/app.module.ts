@@ -7,7 +7,6 @@ import { MyGalleryComponent } from './my-gallery/my-gallery.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     BrowserAnimationsModule,
     MatSidenavModule,
     HttpClientModule,
-    MatProgressSpinnerModule,
     IvyCarouselModule,
   ],
   providers: [],
